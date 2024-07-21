@@ -32,15 +32,18 @@ function Add() {
             color: "purple",
           }}
         >
-          React toolkit
+          Redux toolkit
         </Typography>
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <TextField
             placeholder="Add todos"
             sx={{
               border: 1,
+              borderRadius: 2,
+              fontSize: "20px",
               display: "flex",
-              width: " 300px",
+              width: "100vw",
+              mx: "100px",
               mb: "25px",
             }}
             value={input}

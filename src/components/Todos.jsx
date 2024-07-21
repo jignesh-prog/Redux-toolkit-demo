@@ -26,28 +26,45 @@ function Todos() {
       </Typography>
       <Box
         sx={{
-          display: "block",
-          textAlign: "center",
-          position: "relative",
-          backgroundColor: "plum",
-          margin: "auto",
-          justifyItems: "center",
+          display: "flex",
+          flexDirection: "column",
+
+          justifyContent: "center",
+          height: "auto",
+          width: "auto",
+          mx: "100px",
+          alignContent: "space-around",
         }}
       >
         {todos.map((todo) => (
-          <li key={todo.id}>
+          <List
+            key={todo.id}
+            sx={{
+              display: "flex",
+              border: 1,
+              borderRadius: 2,
+              justifyContent: "space-between",
+              px: "30px",
+              my: "5px",
+              backgroundColor: "plum",
+              textAlign: "center",
+              color: "purple",
+              borderColor: "black",
+              fontSize: "20px",
+            }}
+          >
             {todo.text}
             <Button
               variant="contained"
               endIcon="delete"
-              sx={{ position: "absolute", right: "50px", mb: "10px" }}
+              sx={{ height: "auto", margin: "-5px" }}
               onClick={() => {
                 dispatch(removeToDo(todo.id));
               }}
             >
               X
             </Button>
-          </li>
+          </List>
         ))}
       </Box>
     </>
